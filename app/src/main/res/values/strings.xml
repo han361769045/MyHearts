@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyHearts</string>
+
+    <!-- main  -->
+    <string name="home">首页</string>
+    <string name="expert">咨询</string>
+    <string name="group">群组</string>
+    <string name="heart">心事</string>
+    <string name="no_net">网络连接失败</string>
+
+</resources>

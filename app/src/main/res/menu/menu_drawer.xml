@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/g1">
+        <item
+            android:id="@+id/uc_message"
+            android:icon="@drawable/uc_message"
+            android:title="我的消息"/>
+        <item
+            android:id="@+id/uc_reserve"
+            android:icon="@drawable/uc_reserve"
+            android:title="我的预约"/>
+        <item
+            android:id="@+id/uc_follow"
+            android:icon="@drawable/uc_follow"
+            android:title="关注咨询师"/>
+        <item
+            android:id="@+id/uc_contact"
+            android:icon="@drawable/uc_contact"
+            android:title="联系人"/>
+    </group>
+    <group android:id="@+id/g2">
+        <item
+            android:id="@+id/uc_money"
+            android:icon="@drawable/uc_money"
+            android:title="我的财富"/>
+        <item
+            android:id="@+id/uc_gift"
+            android:icon="@drawable/uc_gift"
+            android:title="我的礼物"/>
+        <item
+            android:id="@+id/uc_worry"
+            android:icon="@drawable/uc_worry"
+            android:title="我的心事"/>
+    </group>
+</menu>

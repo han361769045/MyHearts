@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/default_animation</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+
+    <!-- 默认Activity跳转动画 -->
+    <style name="default_animation" parent="@android:style/Animation.Activity">
+        <!--<style name="default_animation" parent="@style/SlideRightAnimation">-->
+
+        <item name="android:windowEnterAnimation">@anim/in_from_right</item>
+        <item name="android:windowExitAnimation">@null</item>
+
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_from_right</item>
+
+        <item name="android:taskOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@anim/out_from_right</item>
+
+        <item name="android:taskToFrontEnterAnimation">@anim/in_from_right</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@anim/out_from_right</item>
+
+    </style>
+
+    <style name="MainTheme" parent="MyAppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="MyAppTheme" parent="AppTheme">
+
+    </style>
+
+
+    <style name="match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match_match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <style name="wrap_match">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="wrap_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabTitle">
+        <item>@string/home</item>
+        <item>@string/expert</item>
+        <item>@string/group</item>
+        <item>@string/heart</item>
+    </string-array>
+
+    <string-array name="tabTag">
+        <item>home</item>
+        <item>expert</item>
+        <item>group</item>
+        <item>heart</item>
+    </string-array>
+</resources>
+
+

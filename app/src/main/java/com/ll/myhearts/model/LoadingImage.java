@@ -4,7 +4,7 @@ package com.ll.myhearts.model;
  * Created by LeoLu on 2016/11/3.
  */
 
-public class LoadingImageModel {
+public class LoadingImage {
 
     private String loadingimage;
 

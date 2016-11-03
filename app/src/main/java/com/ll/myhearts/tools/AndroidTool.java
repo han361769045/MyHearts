@@ -33,6 +33,11 @@ public class AndroidTool {
         }
     }
 
+    public static void showLoadDialog(android.support.v4.app.Fragment fragment) {
+        showLoadDialog(fragment.getActivity());
+    }
+
+
     /**
      * 隐藏等待对话框
      */

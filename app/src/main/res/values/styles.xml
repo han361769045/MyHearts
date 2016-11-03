@@ -3,7 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowAnimationStyle">@style/default_animation</item>
@@ -65,5 +64,17 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+
+    <style name="qualification_st" parent="wrap_wrap">
+        <item name="android:background">@drawable/qualification_bg</item>
+        <item name="android:textColor">@color/main_font_color</item>
+        <item name="android:textSize">@dimen/_10sp</item>
+    </style>
+
+    <style name="suggest_describe_st" parent="wrap_wrap">
+        <item name="android:padding">@dimen/_2dp</item>
+        <item name="android:textColor">@color/second_font_color</item>
+        <item name="android:textSize">@dimen/_11sp</item>
+    </style>
 
 </resources>

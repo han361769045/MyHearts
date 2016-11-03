@@ -9,14 +9,17 @@ import com.ll.myhearts.items.BaseViewHolder;
 import com.ll.myhearts.items.ItemView;
 import com.ll.myhearts.model.BaseModelJson;
 import com.ll.myhearts.rest.MyErrorHandler;
+import com.ll.myhearts.rest.MyRestClient;
 import com.ll.myhearts.tools.AndroidTool;
 
+import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.res.StringRes;
+import org.androidannotations.rest.spring.annotations.RestService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +46,16 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     @Bean
     MyErrorHandler myErrorHandler;
 
+    @RestService
+    MyRestClient myRestClient;
 
     @RootContext
     Context context;
+
+    @AfterInject
+    void afterInject() {
+        myRestClient.setRestErrorHandler(myErrorHandler);
+    }
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

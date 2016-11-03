@@ -6,7 +6,6 @@ import android.util.Log;
 import com.ll.myhearts.tools.AndroidTool;
 
 
-
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;
 import org.androidannotations.rest.spring.api.RestErrorHandler;
@@ -18,8 +17,6 @@ public class MyErrorHandler implements RestErrorHandler {
 
     @RootContext
     Context context;
-
-    
 
     @Override
     public void onRestClientExceptionThrown(NestedRuntimeException arg0) {

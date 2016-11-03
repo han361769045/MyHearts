@@ -1,10 +1,13 @@
 package com.ll.myhearts.model;
 
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by LeoLu on 2016/11/3.
  */
-
-public class BannerModel {
+public class BannerModel implements Parcelable {
 
     /**
      * id : 91
@@ -27,6 +30,21 @@ public class BannerModel {
     private String url;
     private String target;
     private String className;
+
+    public BannerModel() {
+    }
+
+    public BannerModel(String id, String icon, String pic, String title, String subtitle, String type, String url, String target, String className) {
+        this.id = id;
+        this.icon = icon;
+        this.pic = pic;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.type = type;
+        this.url = url;
+        this.target = target;
+        this.className = className;
+    }
 
     public String getId() {
         return id;
@@ -99,4 +117,46 @@ public class BannerModel {
     public void setClassName(String className) {
         this.className = className;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
+        dest.writeString(this.icon);
+        dest.writeString(this.pic);
+        dest.writeString(this.title);
+        dest.writeString(this.subtitle);
+        dest.writeString(this.type);
+        dest.writeString(this.url);
+        dest.writeString(this.target);
+        dest.writeString(this.className);
+    }
+
+    protected BannerModel(Parcel in) {
+        this.id = in.readString();
+        this.icon = in.readString();
+        this.pic = in.readString();
+        this.title = in.readString();
+        this.subtitle = in.readString();
+        this.type = in.readString();
+        this.url = in.readString();
+        this.target = in.readString();
+        this.className = in.readString();
+    }
+
+    public static final Creator<BannerModel> CREATOR = new Creator<BannerModel>() {
+        @Override
+        public BannerModel createFromParcel(Parcel source) {
+            return new BannerModel(source);
+        }
+
+        @Override
+        public BannerModel[] newArray(int size) {
+            return new BannerModel[size];
+        }
+    };
 }

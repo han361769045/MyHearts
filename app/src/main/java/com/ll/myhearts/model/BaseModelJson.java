@@ -11,6 +11,13 @@ package com.ll.myhearts.model;
  */
 public class BaseModelJson<T> extends BaseModel {
 
-    public T Data;
+    private T results;
 
+    public T getResults() {
+        return results;
+    }
+
+    public void setResults(T results) {
+        this.results = results;
+    }
 }

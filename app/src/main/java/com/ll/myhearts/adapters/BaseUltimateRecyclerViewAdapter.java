@@ -81,16 +81,16 @@ public abstract class BaseUltimateRecyclerViewAdapter<T> extends LLRecyclerViewA
     protected void afterGetMoreData(BaseModelJson<PagerResult<T>> result) {
         if (result == null) {
             result = new BaseModelJson<>();
-        } else if (result.Successful) {
+        } else if (result.getErrorCode() == 0) {
             if (isRefresh) {
                 clear();
             }
-            setTotal(result.Data.RowCount);
-            if (result.Data.ListData.size() > 0) {
-                insertAll(result.Data.ListData, getItems().size());
+            setTotal(result.getResults().RowCount);
+            if (result.getResults().ListData.size() > 0) {
+                insertAll(result.getResults().ListData, getItems().size());
             }
         } else {
-            AndroidTool.showToast(context, result.Error);
+            AndroidTool.showToast(context, result.getErrorStr());
         }
         if (bus != null) {
             bus.post(result);

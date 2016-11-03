@@ -9,9 +9,53 @@ package com.ll.myhearts.model;
  */
 public class BaseModel {
 
-    public boolean Successful;
+    private int errorCode = -1;
 
-    public String Error;
+    private String errorStr;
 
+    private int resultCount;
 
+    private int score;
+
+    private double balance;
+
+    public int getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public String getErrorStr() {
+        return errorStr;
+    }
+
+    public void setErrorStr(String errorStr) {
+        this.errorStr = errorStr;
+    }
+
+    public int getResultCount() {
+        return resultCount;
+    }
+
+    public void setResultCount(int resultCount) {
+        this.resultCount = resultCount;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }

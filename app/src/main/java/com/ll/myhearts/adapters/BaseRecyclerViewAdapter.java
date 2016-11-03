@@ -65,10 +65,10 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         if (result == null) {
             result = new BaseModelJson<>();
 //            AndroidTool.showToast(context, no_net);
-        } else if (result.Successful) {
+        } else if (result.getErrorCode() == 0) {
             clear();
-            if (result.Data.size() > 0) {
-                insertAll(result.Data, getItemCount());
+            if (result.getResults().size() > 0) {
+                insertAll(result.getResults(), getItemCount());
             }
         }
     }

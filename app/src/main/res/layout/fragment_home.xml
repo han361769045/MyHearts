@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_70dp"
         android:background="@color/colorAccent"
-        app:mLogoIcon="@mipmap/ic_launcher"
+        app:mLogoIcon="@drawable/dialog_avatar_bg"
         app:mRightText="客服"
         app:mRightTextMarginRight="@dimen/_15dp"
         app:mStatueBarIsTransparent="true"/>

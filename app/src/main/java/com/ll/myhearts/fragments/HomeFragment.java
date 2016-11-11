@@ -72,6 +72,17 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
         myAdapter.getMoreData();
         getBanner();
         loadActionLabels();
+        fff();
+    }
+
+    @Background
+    void fff() {
+        afterF(myRestClient.fff());
+    }
+
+    @UiThread
+    void afterF(String fff) {
+        String a = fff;
     }
 
     @Background

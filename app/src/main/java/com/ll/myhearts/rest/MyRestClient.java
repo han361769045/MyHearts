@@ -193,9 +193,5 @@ public interface MyRestClient extends RestClientRootUrl, RestClientSupport, Rest
     @Get("consultant/profileTopComments?userid={userid}")
     BaseModelJson<List<Comments>> profileTopComments(@Path String userid);
 
-
-    @Get("https://castest.scunicom/crm6/rest")
-    String fff();
-
 }
 

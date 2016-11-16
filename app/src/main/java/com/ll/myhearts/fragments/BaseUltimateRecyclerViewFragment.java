@@ -11,14 +11,11 @@ import android.widget.TextView;
 import com.leo.lu.llrecyclerview.LLRecyclerView;
 import com.leo.lu.llrecyclerview.ui.divideritemdecoration.HorizontalDividerItemDecoration;
 import com.leo.lu.mytitlebar.MyTitleBar;
-
 import com.ll.myhearts.adapters.BaseUltimateRecyclerViewAdapter;
-import com.ll.myhearts.listener.OttoBus;
 import com.ll.myhearts.model.BaseModel;
 import com.squareup.otto.Subscribe;
 
 import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.ColorRes;
@@ -46,11 +43,8 @@ public abstract class BaseUltimateRecyclerViewFragment<T> extends BaseFragment {
     @ViewById
     TextView empty_view;
 
-    @Bean
-    OttoBus bus;
-	
-	@ColorRes
-	int line_color;
+    @ColorRes
+    int line_color;
 
     LinearLayoutManager linearLayoutManager;
 
@@ -238,15 +232,5 @@ public abstract class BaseUltimateRecyclerViewFragment<T> extends BaseFragment {
             }
         });
         ultimateRecyclerView.reenableLoadmore();
-    }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (hidden) {
-            bus.unregister(this);
-        } else {
-            bus.register(this);
-        }
     }
 }

@@ -22,7 +22,7 @@ import com.ll.myhearts.R;
 import java.util.ArrayList;
 
 
-public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListener{
+public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListener {
 
     private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
     private FrameLayout mRealTabContent;
@@ -253,7 +253,11 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         ft = doTabChanged(currentTab, ft);
         if (ft != null) {
             ft.commit();
-            mFragmentManager.executePendingTransactions();
+            //执行commit方法后，并非Fragment事务就立即执行，依赖于系统的处理性能。
+            //当然你可以调用executePendingTransactions()方法立即执行。
+            // 其实这样做通常没有必要，除非Fragment事务依赖于其他现场的工作任务。
+            //添加这个方法能立即执行。但是破坏生命周期  如：onResume  onHiddenChanged  不调用
+//            mFragmentManager.executePendingTransactions();
         }
     }
 

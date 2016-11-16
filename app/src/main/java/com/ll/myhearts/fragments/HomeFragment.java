@@ -17,9 +17,12 @@ import com.ll.myhearts.activities.MainActivity;
 import com.ll.myhearts.adapters.HotEncyAdapter;
 import com.ll.myhearts.model.ActionLabels;
 import com.ll.myhearts.model.BannerModel;
+import com.ll.myhearts.model.BaseModel;
 import com.ll.myhearts.model.BaseModelJson;
 import com.ll.myhearts.model.HotEncy;
 import com.ll.myhearts.model.PsychologyTeacher;
+import com.ll.myhearts.rest.MyBackgroundTask;
+import com.squareup.otto.Subscribe;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -55,10 +58,12 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
     DrawerLayout drawer_layout;
 
     @Bean
+    MyBackgroundTask myBackgroundTask;
+
+    @Bean
     void setAdapter(HotEncyAdapter myAdapter) {
         this.myAdapter = myAdapter;
     }
-
 
     @AfterViews
     void afterView() {
@@ -70,32 +75,16 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
             }
         });
         myAdapter.getMoreData();
-        getBanner();
-        loadActionLabels();
-        fff();
+        myBackgroundTask.getBanner(BannerModel.class);
+        myBackgroundTask.loadActionLabels();
     }
 
-    @Background
-    void fff() {
-        afterF(myRestClient.fff());
-    }
-
-    @UiThread
-    void afterF(String fff) {
-        String a = fff;
-    }
-
-    @Background
-    void loadActionLabels() {
-        afterLoadActionLabels(myRestClient.loadActionLabels());
-    }
-
-    @UiThread
-    void afterLoadActionLabels(BaseModelJson<List<ActionLabels>> result) {
-        if (result != null && result.getErrorCode() == 0) {
-            showActionLabels(result.getResults());
-        }
-    }
+//    @Subscribe
+//    public void afterLoadActionLabels(BaseModelJson<List<ActionLabels>> result) {
+//        if (result != null && result.getErrorCode() == 0) {
+//            showActionLabels(result.getResults());
+//        }
+//    }
 
     private void showActionLabels(List<ActionLabels> list) {
         if (list != null) {
@@ -108,15 +97,20 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
         }
     }
 
-    @Background
-    void getBanner() {
-        afterGetBanner(myRestClient.loadBanner_v2("consultant"));
-    }
+//    @Subscribe
+//    public void afterGetBanner(BaseModelJson<List<BannerModel>> result) {
+//        if (result != null && result.getErrorCode() == 0) {
+////            showBanner(result.getResults());
+//        }
+//    }
 
-    @UiThread
-    void afterGetBanner(BaseModelJson<List<BannerModel>> result) {
+    @Subscribe
+    public void afterGetBanner(BaseModel result) {
         if (result != null && result.getErrorCode() == 0) {
-            showBanner(result.getResults());
+            if (result instanceof BaseModelJson) {
+                showBanner((List<BannerModel>) result);
+            }
+
         }
     }
 

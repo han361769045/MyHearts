@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.ll.myhearts.listener.OttoBus;
 import com.ll.myhearts.model.BaseModel;
+import com.ll.myhearts.model.BaseModelJson;
 
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.Background;
@@ -35,17 +36,17 @@ public class MyBackgroundTask {
     }
 
     @Background
-    public void getBanner(Class t) {
-        afterGetData(myRestClient.loadBanner_v2("consultant"));
+    public <T> void getBanner(BaseModelJson<T> type) {
+        afterGetData(myRestClient.loadBanner_v2("consultant"), type);
     }
 
     @Background
     public void loadActionLabels() {
-        afterGetData(myRestClient.loadActionLabels());
+//        afterGetData(myRestClient.loadActionLabels());
     }
 
     @UiThread
-    void afterGetData(BaseModel result) {
+    <T> void afterGetData(BaseModel result, BaseModelJson<T> type) {
         if (result != null) {
             bus.post(result);
         }

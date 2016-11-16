@@ -13,8 +13,6 @@ public class BaseModelJson<T> extends BaseModel {
 
     private T results;
 
-    private Class<T> tClass;
-
     public T getResults() {
         return results;
     }
@@ -23,12 +21,4 @@ public class BaseModelJson<T> extends BaseModel {
         this.results = results;
     }
 
-    public Class<T> gettClass() {
-
-        return tClass;
-    }
-
-    public void settClass(Class<T> tClass) {
-        this.tClass = tClass;
-    }
 }

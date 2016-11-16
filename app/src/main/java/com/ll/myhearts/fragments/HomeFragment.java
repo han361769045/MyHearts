@@ -75,8 +75,9 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
             }
         });
         myAdapter.getMoreData();
-        myBackgroundTask.getBanner(BannerModel.class);
-        myBackgroundTask.loadActionLabels();
+        myBackgroundTask.getBanner(new BaseModelJson<List<BannerModel>>() {
+        });
+//        myBackgroundTask.loadActionLabels();
     }
 
 //    @Subscribe
@@ -108,7 +109,8 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
     public void afterGetBanner(BaseModel result) {
         if (result != null && result.getErrorCode() == 0) {
             if (result instanceof BaseModelJson) {
-                showBanner((List<BannerModel>) result);
+//                showBanner();
+
             }
 
         }

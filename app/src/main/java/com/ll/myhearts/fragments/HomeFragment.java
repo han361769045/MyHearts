@@ -75,8 +75,7 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
             }
         });
         myAdapter.getMoreData();
-        myBackgroundTask.getBanner(new BaseModelJson<List<BannerModel>>() {
-        });
+        myBackgroundTask.getBanner();
 //        myBackgroundTask.loadActionLabels();
     }
 
@@ -110,7 +109,6 @@ public class HomeFragment extends BaseRecyclerViewFragment<HotEncy> implements B
         if (result != null && result.getErrorCode() == 0) {
             if (result instanceof BaseModelJson) {
 //                showBanner();
-
             }
 
         }

@@ -29,6 +29,7 @@ public class MyBackgroundTask {
     @RestService
     MyRestClient myRestClient;
 
+
     @AfterInject
     void afterRecyclerInject() {
         myRestClient.setRestErrorHandler(myErrorHandler);

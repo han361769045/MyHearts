@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -22,8 +23,10 @@ import com.nineoldandroids.view.ViewHelper;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.WindowFeature;
 import org.androidannotations.annotations.res.StringArrayRes;
 
+@WindowFeature({WindowManager.LayoutParams.FLAG_SECURE})
 @EActivity(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
 

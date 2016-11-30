@@ -72,7 +72,8 @@ public class VideoActivity extends AppCompatActivity implements TracksFragment.I
         mSettings = new Settings(this);
 
         // handle arguments
-        mVideoPath = getIntent().getStringExtra("videoPath");
+//        mVideoPath = getIntent().getStringExtra("videoPath");
+        mVideoPath = "http://cdn.ghs-tv.readtv.cn/video/0a2a2ae0c0eb29510a334ebddb7d9e14/stream-1.ts";
 
         Intent intent = getIntent();
         String intentAction = intent.getAction();

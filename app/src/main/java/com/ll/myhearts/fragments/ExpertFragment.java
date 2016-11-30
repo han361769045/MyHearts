@@ -1,8 +1,10 @@
 package com.ll.myhearts.fragments;
 
+import android.content.Intent;
 import android.widget.Button;
 
 import com.ll.myhearts.R;
+import com.ll.myhearts.activities.VideoActivity;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -25,6 +27,7 @@ public class ExpertFragment extends BaseFragment {
     }
 
     @Click
-    void btnCancel() {
+    void btnCancelClicked() {
+        startActivity(new Intent(getActivity(), VideoActivity.class));
     }
 }

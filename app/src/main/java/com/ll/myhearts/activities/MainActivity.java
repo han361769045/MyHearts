@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.ll.myhearts.R;
 import com.ll.myhearts.customview.FragmentTabHost;
 import com.ll.myhearts.fragments.ExpertFragment_;
-import com.ll.myhearts.fragments.GroupFramgment_;
+import com.ll.myhearts.fragments.GroupFragment_;
 import com.ll.myhearts.fragments.HeartFragment_;
 import com.ll.myhearts.fragments.HomeFragment_;
 import com.ll.myhearts.tools.AndroidTool;
@@ -43,7 +43,7 @@ public class MainActivity extends BaseActivity {
     NavigationView nv_menu;
 
     //导航
-    Class[] classTab = {HomeFragment_.class, ExpertFragment_.class, GroupFramgment_.class, HeartFragment_.class};
+    Class[] classTab = {HomeFragment_.class, ExpertFragment_.class, GroupFragment_.class, HeartFragment_.class};
 
     int[] ids = {R.drawable.tab_home, R.drawable.tab_expert, R.drawable.tab_group, R.drawable.tab_heart};
 
